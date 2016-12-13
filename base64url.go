@@ -13,14 +13,14 @@ var StdURL Base64ExtURL
 
 func (this Base64ExtURL) Encode(src []byte) string {
 	s := base64.StdEncoding.EncodeToString(src)
-	return string.Map(func(r rune) rune {
+	return strings.Map(func(r rune) rune {
 		switch r {
 		case '+':
 			return '-'
 		case '/':
 			return '_'
 		case '=':
-			return nil
+			return 0
 		default:
 			return r
 		}

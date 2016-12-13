@@ -9,7 +9,7 @@ type Base64ExtURL struct {
 	Base64Ext
 }
 
-var StdURL Base64ExtURL
+var URL Base64ExtURL
 
 func (this Base64ExtURL) Encode(src []byte) string {
 	s := base64.StdEncoding.EncodeToString(src)
